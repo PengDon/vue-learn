@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simplest example</title>
+  <!-- 1、引用vue库 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style>
+    .red {
+      color:red
+    }
+  </style>
+</head>
+<body>
+  <!-- 指定模板插槽 -->
+  <div id="app">
+    <!-- 纯内容渲染 -->
+    {{ message }}
+    <!-- 纯文本内容渲染 -->
+    <div v-text="tc"></div>
+    <!-- 带标签内容渲染 -->
+    <div v-html="dv"></div>
+    <!-- 遍历集合 -->
+    <p v-for="(item,key) in list" :key="key">
+      <!-- class动态绑定 -->
+      <span :class="{'red':key===1}">{{item}}</span>
+    </p>
+    <!-- v-model数据双向绑定 -->
+    <input type="text" v-model="name" placeholder="数据双向绑定"/>
+    {{name}}
+    <br/>
+    <input type="text" placeholder="input事件监听输入" @input="input($event)"/>
+    <br/>
+    <input type="text" placeholder="keyup.enter事件监听输入" @keyup.enter="keyup($event)"/> 
+    <br/>
+    <br/>
+    <!-- click点击事件 -->
+    {{num}}
+    <button @click="addNum">添加</button>
+  </div>
+  <script>
+    // [vue api](https://cn.vuejs.org/v2/api/)
+    // 实例化vue对象并绑定数据
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: '页面加载于 ' + new Date().toLocaleString(),
+        list:['aa','bb','cc'],
+        tc:'12345566778',
+        dv:'<div class="red">带标签的内容</div>',
+        name:'',
+        num:0
+      },
+      methods: {
+        input(e){
+          console.log('----input----')
+          console.log(e.target.value)
+        },
+        keyup(e){
+          console.log('----keyup----')
+          console.log(e.target.value)
+        },
+        addNum(){
+          this.num++
+        }
+      },
+    })
+  </script>
+</body>
+</html>
