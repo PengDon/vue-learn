@@ -1,3 +1,5 @@
+## 划分结构、添加常用依赖
+
 ## 准备解决的问题
 1、解决加载css文件 
 >  style-loader、css-loader
@@ -8,10 +10,10 @@
 3、解决css浏览器兼容性，自动补全前缀
 >  postcss-loader、autoprefixer
 
-4、解决样式分离、提取css
->  extract-text-webpack-plugin@next
+4、解决样式分离、提取css(webpack4版本生产环境用)
+>  mini-css-extract-plugin
 
-5、解决声明了很多样式，但部分样式并没有用到，造成了css冗余，配合extract-text-webpack-plugin@next使用
+5、解决声明了很多样式，但部分样式并没有用到，造成了css冗余，
 >  purifycss-webpack、purify-css
 
 6、解决加载静态文件(如：图片、字体等)
@@ -21,5 +23,5 @@
 ## 依赖插件安装
 ```sh
 npm install style-loader css-loader babel-loader @babel/core @babel/preset-env postcss-loader autoprefixer -D
-npm install extract-text-webpack-plugin@next purifycss-webpack purify-css file-loader url-loader -D
+npm install mini-css-extract-plugin purifycss-webpack purify-css file-loader url-loader -D
 ```
