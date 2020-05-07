@@ -1,3 +1,3 @@
 <template>
-    <div class="cont"> 放假了 </div>
+    <div class="cont"> 千江鸟飞绝 </div>
 </template>

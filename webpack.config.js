@@ -65,7 +65,7 @@ module.exports = {
     new HtmlWebpackPlugin(
       {
         title: 'home',
-        template: './public/index.html', // 模版路径
+        template: path.resolve(__dirname, 'public/index.html'), // 模版路径
         filename: 'index.html', // 生成的文件名称
         inject: 'body' // 指定插入的<script>标签在body底部
       }
@@ -76,6 +76,7 @@ module.exports = {
     })
   ],
   devServer: {
+    contentBase: __dirname + "/public/",
     disableHostCheck: true
   }
 }
