@@ -5,7 +5,7 @@ const Glob = require('glob');
 const PurifyCssWebpack = require('purifycss-webpack');
 const IsProduction = process.env.NODE_ENV === 'production';
 
-const resolve = (dir) =>{
+const resolve = (dir) => {
   return path.join(__dirname, '..', dir)
 }
 
@@ -65,6 +65,8 @@ module.exports = {
     extensions: ['.js', '.json', '.css', '.vue'],
     modules: ["node_modules", path.resolve(__dirname, 'app')],
     alias: {
+      // 解决： [Vue warn]: You are using the runtime-only build of Vue where the template compiler is not available. 
+      //                    Either pre-compile the templates into render functions, or use the compiler-included build.
       vue$: "vue/dist/vue.esm.js",
       "@": resolve("src")
     }
@@ -75,7 +77,9 @@ module.exports = {
         title: 'home',
         template: path.resolve(__dirname, 'public/index.html'), // 模版路径
         filename: 'index.html', // 生成的文件名称
-        inject: 'body' // 指定插入的<script>标签在body底部,防止找不到#app元素
+        // 指定插入的<script>标签在body底部
+        // 解决：[Vue warn]: Cannot find element: #app
+        inject: 'body'
       }
     ),
     new VueLoaderPlugin(),
