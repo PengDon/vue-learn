@@ -14,6 +14,10 @@ const routes = [
   {
     path: '/b',
     component: B
+  },
+  {
+    path: '/count',
+    component: () => import('../views/Count.vue')
   }
 ]
 

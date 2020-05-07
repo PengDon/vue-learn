@@ -1,6 +1,15 @@
-/*
- * @Author: don
- * @Date: 2020-05-07 16:00:23
- * @LastEditTime: 2020-05-07 16:00:23
- * @Description: file content
- */
+import Vue from 'vue';
+import Vuex from 'vuex';
+
+Vue.use(Vuex);
+
+export default new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  }
+})
