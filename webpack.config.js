@@ -5,6 +5,10 @@ const Glob = require('glob');
 const PurifyCssWebpack = require('purifycss-webpack');
 const IsProduction = process.env.NODE_ENV === 'production';
 
+const resolve = (dir) =>{
+  return path.join(__dirname, '..', dir)
+}
+
 module.exports = {
   entry: path.join(__dirname, './src/app.js'),
   mode: 'development',
@@ -12,7 +16,7 @@ module.exports = {
   devtool: IsProduction ? 'source-map' : 'eval-source-map',
   output: {
     filename: 'index.js',
-    path: path.join(__dirname, 'dist')
+    path: path.resolve(__dirname, './dist'),
   },
   module: {
     rules: [
@@ -59,7 +63,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.json', '.css', '.vue'],
-    modules: ["node_modules", path.resolve(__dirname, 'app')]
+    modules: ["node_modules", path.resolve(__dirname, 'app')],
+    alias: {
+      vue$: "vue/dist/vue.esm.js",
+      "@": resolve("src")
+    }
   },
   plugins: [
     new HtmlWebpackPlugin(
@@ -67,7 +75,7 @@ module.exports = {
         title: 'home',
         template: path.resolve(__dirname, 'public/index.html'), // 模版路径
         filename: 'index.html', // 生成的文件名称
-        inject: 'body' // 指定插入的<script>标签在body底部
+        inject: 'body' // 指定插入的<script>标签在body底部,防止找不到#app元素
       }
     ),
     new VueLoaderPlugin(),

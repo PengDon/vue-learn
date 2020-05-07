@@ -1,6 +1,6 @@
 @import './common.css';
 
-.cont {
+#app {
   font-size: 38px;
   color: red;
 }
