@@ -1,3 +1,13 @@
 <template>
-    <div> 放假了 </div>
+    <div> {{msg}} </div>
 </template>
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+@Component
+export default class App extends Vue {
+    msg:string = 'vue typescript'
+}
+
+</script>

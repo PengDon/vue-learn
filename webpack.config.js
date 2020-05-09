@@ -3,7 +3,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, './app.js'),
+  entry: path.join(__dirname, './app.ts'),
   mode: 'development',
   output: {
     filename: 'index.js',
@@ -14,11 +14,25 @@ module.exports = {
       {
         test: /.vue$/,
         loader: 'vue-loader'
+      },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        loader: 'tslint-loader'
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        }
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.json', '.css', '.vue'],
+    extensions: ['.js','.ts', '.json', '.css', '.vue'],
     modules: ["node_modules", path.resolve(__dirname, 'app')]
   },
   plugins: [
