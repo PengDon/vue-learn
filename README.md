@@ -15,6 +15,6 @@
 
 ## 依赖插件安装
 ```sh
-npm install typescript ts-loader tslint tslint-loader tslint-config-standard -D
+npm install typescript ts-loader tslint tslint-loader -D
 npm install vue-property-decorator vue-class-component -S
 ```
