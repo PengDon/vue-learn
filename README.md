@@ -21,13 +21,19 @@ npm install -save vue
 npm install --save-dev vue-loader vue-template-compiler  
 
 # webpack 
-npm install --save-dev webpack webpack-cli@3 webpack-dev-server html-webpack-plugin clean-webpack-plugin
+npm install --save-dev webpack webpack-cli@3 webpack-dev-server html-webpack-plugin
 
 # loader
 npm install --save-dev style-loader url-loader file-loader less less-loader
 
 # es6->es5
 npm install --save-dev babel-loader @babel/core @babel/preset-env
+
+# 组件按需引入
+npm install --save-dev babel-plugin-import
+
+# 代码压缩
+npm install --save-dev terser-webpack-plugin
 ```
 
 
@@ -38,6 +44,6 @@ npm install --save-dev babel-loader @babel/core @babel/preset-env
 * [webapck](https://webpack.docschina.org/)
 * [less](https://less.bootcss.com/)
 * [Babel](https://www.babeljs.cn/)
-* []()
-* []()
+* [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-import)
+* [webpack v4.15.1](https://webpack.html.cn/)
 * []()

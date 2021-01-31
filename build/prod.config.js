@@ -1,18 +1,20 @@
-const path = require('path')
+const utils = require('./utils')
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const cleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-  entry: './src/app.js',
   mode: 'production',
+  entry: {
+    index: utils.resolve('../packages/index'),
+    ...utils.getEntries('./packages')
+  },
   output: {
-    filename: 'index.js',
-    path: path.join(__dirname, 'dist')
+    path: utils.resolve('../lib'),
+    filename: '[name]/index.js',
+    library: 'library', // 配置这里 支持script标签引入
+    libraryTarget: 'umd', // umd支持通用的模块化引入方法（cmd、amd、esmodule）
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /.vue$/,
         loader: 'vue-loader'
       },
@@ -26,8 +28,13 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        use: ['babel-loader'],
-        exclude: path.resolve(__dirname, 'node_modules')
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        },
+        exclude: utils.resolve('node_modules')
       },
       {
         test: /\.(jpg|jpeg|gif|png|svg)$/,
@@ -43,15 +50,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'index.html', // 模版路径
-      filename: 'index.html', // 生成的文件名称
-      inject: 'body' // 指定插入的<script>标签在body底部
-    }),
     new VueLoaderPlugin(),
-    new cleanWebpackPlugin(['dist']),
   ],
-  devServer: {
-    disableHostCheck: true
-  }
+  externals: {
+  },
 }
