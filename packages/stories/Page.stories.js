@@ -2,7 +2,7 @@ import MyPage from './Page';
 import * as HeaderStories from './Header.stories';
 
 export default {
-  title: 'Example/Page',
+  title: 'Layout/Page',
   component: MyPage,
 };
 

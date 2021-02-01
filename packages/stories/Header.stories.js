@@ -1,7 +1,7 @@
 import CommHeader from '../components/header';
 
 export default {
-  title: 'Example/Header',
+  title: 'Layout/Header',
   component: CommHeader,
 };
 
