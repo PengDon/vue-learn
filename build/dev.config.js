@@ -1,7 +1,8 @@
 const utils = require('./utils')
 
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { util } = require('webpack');
 
 module.exports = {
   mode: 'development',
@@ -11,41 +12,13 @@ module.exports = {
     path: utils.resolve('dist')
   },
   module: {
-    rules: [{
-        test: /.vue$/,
-        loader: 'vue-loader'
-      },
-      {
-        test: /\.less$/,
-        loader: "style-loader!css-loader!less-loader",
-      },
-      {
-        test: /\.js$/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        },
-        exclude: utils.resolve('node_modules')
-      },
-      {
-        test: /\.(jpg|jpeg|gif|png|svg)$/,
-        use: [{
-          loader: "url-loader",
-          options: {
-            // 单位是b 512000b = 500kb
-            limit: 512000,
-            name: '[name]-[hash:8].[ext]'
-          }
-        }]
-      }
-    ]
+    rules: utils.rules
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       '@': utils.resolve('packages'),
+      '@com': utils.resolve('packages/components'),
       'dui': utils.resolve('packages/index.js') // 便于app.js中进行开发调试
     }
   },

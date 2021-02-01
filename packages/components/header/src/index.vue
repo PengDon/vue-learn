@@ -16,6 +16,8 @@ export default {
   .comm-header {
       width: 100%;
       height: 100px;
-      background:blue;
+      line-height: 100px;
+      text-align: center;
+      border: 1px solid #cccccc;
   }
 </style>

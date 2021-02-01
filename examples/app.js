@@ -6,7 +6,7 @@ import App from './App.vue'
 // import DUI from 'dui'
 // Vue.use(DUI)
 
-import DUI from '../packages/index'
+import DUI from '@'
 Vue.use(DUI)
 
 // import Commheader from '@/header'

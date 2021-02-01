@@ -10,7 +10,7 @@
     "example": "examples"
   },
   "scripts": {
-    "dev": "webpack-dev-server --port 3000 --hot --watch --inline --open --config ./build/dev.config.js",
+    "dev": "webpack-dev-server --port 5000 --hot --watch --inline --open --config ./build/dev.config.js",
     "build": "webpack --progress --colors --config ./build/prod.config.js"
   },
   "dependencies": {

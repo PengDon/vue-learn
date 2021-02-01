@@ -34,6 +34,12 @@ npm install --save-dev babel-plugin-import
 
 ```
 
+## 封装一个弹框组件
+
+
+## 注意点
+1. [require.context](https://webpack.docschina.org/guides/dependency-management/#requirecontext) 这个是webpack运行时才能用，要调试看效果，需要打开浏览器控制台看日志。
+   
 
 ## 参考
 
