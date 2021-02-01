@@ -1,8 +1,11 @@
 {
-  "name": "vue-learn",
+  "name": "dui",
   "version": "1.0.0",
-  "description": "1. 分好目录结构\r ```sh\r # 用于放webpack配置文件\r mkdir build\r # 用于放组件源代码\r mkdir packages\r # 用于存放组件demo\r mkdir examples",
+  "description": "none",
   "main": "lib/index/index.js",
+  "files": [
+    "lib"
+  ],
   "directories": {
     "example": "examples"
   },

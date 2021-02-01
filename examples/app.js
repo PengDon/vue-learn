@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
-import {CommHeader} from 'd-ui'
 
-Vue.use(CommHeader)
+import DUI from 'dui'
+
+Vue.use(DUI)
 
 new Vue({
     render: (h) => h(App)

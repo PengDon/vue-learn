@@ -50,6 +50,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       '@': utils.resolve('packages'),
+      'dui': utils.resolve('packages/index.js')
     }
   },
   plugins: [
@@ -66,6 +67,6 @@ module.exports = {
     hot: true,
     open: 'Google Chrome'
   },
-  // devtool:'cheap-module-eval-source-map',
-  devtool: 'eval-source-map',
+  devtool:'cheap-module-eval-source-map',
+  // devtool: 'eval-source-map',
 }

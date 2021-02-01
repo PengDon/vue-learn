@@ -4,14 +4,15 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
   mode: 'production',
   entry: {
-    index: utils.resolve('../packages/index'),
+    index: utils.resolve('packages/index'),
     ...utils.getEntries('./packages')
   },
   output: {
-    path: utils.resolve('../lib'),
+    path: utils.resolve('lib'),
     filename: '[name]/index.js',
-    library: 'library', // 配置这里 支持script标签引入
-    libraryTarget: 'umd', // umd支持通用的模块化引入方法（cmd、amd、esmodule）
+    library: 'dui',
+    libraryExport: "default",
+    libraryTarget: 'umd', // 打包类库的发布格式
   },
   module: {
     rules: [{

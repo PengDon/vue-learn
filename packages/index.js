@@ -1,4 +1,4 @@
-import CommHeader from '../packages/header'
+import CommHeader from './header'
 
 export default {
     install(Vue){
