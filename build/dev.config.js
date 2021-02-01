@@ -16,12 +16,8 @@ module.exports = {
         loader: 'vue-loader'
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
         test: /\.less$/,
-        use: ['style-loader', 'css-loader', 'less-loader']
+        loader: "style-loader!css-loader!less-loader",
       },
       {
         test: /\.js$/,
@@ -50,7 +46,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       '@': utils.resolve('packages'),
-      'dui': utils.resolve('packages/index.js')
+      'dui': utils.resolve('packages/index.js') // 便于app.js中进行开发调试
     }
   },
   plugins: [

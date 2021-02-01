@@ -1,5 +1,5 @@
 <template>
-    <header>{{label}}</header>
+    <header class="comm-header">{{label}}</header>
 </template>
 <script>
 export default {
@@ -12,3 +12,10 @@ export default {
     }
 }
 </script>
+<style lang="less" scoped>
+  .comm-header {
+      width: 100%;
+      height: 100px;
+      background:blue;
+  }
+</style>

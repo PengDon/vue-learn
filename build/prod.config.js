@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: utils.resolve('lib'),
     filename: '[name]/index.js',
-    library: 'dui',
+    library: 'dui', // 组件库名称
     libraryExport: "default",
     libraryTarget: 'umd', // 打包类库的发布格式
   },
@@ -20,12 +20,8 @@ module.exports = {
         loader: 'vue-loader'
       },
       {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
         test: /\.less$/,
-        use: ['style-loader', 'css-loader', 'less-loader']
+        loader: "style-loader!css-loader!less-loader",
       },
       {
         test: /\.js$/,

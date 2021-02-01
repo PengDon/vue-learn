@@ -24,7 +24,7 @@ npm install --save-dev vue-loader vue-template-compiler
 npm install --save-dev webpack webpack-cli@3 webpack-dev-server html-webpack-plugin
 
 # loader
-npm install --save-dev style-loader url-loader file-loader less less-loader
+npm install --save-dev css-loader style-loader url-loader file-loader less less-loader
 
 # es6->es5
 npm install --save-dev babel-loader @babel/core @babel/preset-env
@@ -32,8 +32,6 @@ npm install --save-dev babel-loader @babel/core @babel/preset-env
 # 组件按需引入
 npm install --save-dev babel-plugin-import
 
-# 代码压缩
-npm install --save-dev terser-webpack-plugin
 ```
 
 
