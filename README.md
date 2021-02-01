@@ -35,11 +35,19 @@ npm install --save-dev babel-plugin-import
 ```
 
 ## 封装一个弹框组件
+```js
+// toast
+```
 
 
 ## 注意点
 1. [require.context](https://webpack.docschina.org/guides/dependency-management/#requirecontext) 这个是webpack运行时才能用，要调试看效果，需要打开浏览器控制台看日志。
    
+
+## 添加storybook
+```sh
+npx sb init
+```
 
 ## 参考
 
@@ -50,4 +58,7 @@ npm install --save-dev babel-plugin-import
 * [Babel](https://www.babeljs.cn/)
 * [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-import)
 * [webpack v4.15.1](https://webpack.html.cn/)
+* [storybook](https://storybook.js.org/)
+* []()
+* []()
 * []()
