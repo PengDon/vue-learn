@@ -24,6 +24,7 @@ const install = (Vue) => {
     const componentConfig = requireComponent(fileName)
     Vue.use(componentConfig.default)
   })
+
 }
 
 export default { install }

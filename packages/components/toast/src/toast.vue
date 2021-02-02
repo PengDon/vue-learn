@@ -1,13 +1,13 @@
 <template>
-  <div class="dui-mask">
+  <div class="dui-mask" :class="{'dui-fixed':isFixed}">
     <div class="dui-toast">
-      <p class="dui-toast-content" v-html="mes"></p>
+      <div class="dui-toast-content">{{ mes }}</div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name:'toast',
+  name: 'Toast',
   props: {
     mes: String,
     timeout: {
@@ -15,6 +15,7 @@ export default {
       default: 2000,
     },
     callback: Function,
+    isFixed: true,
   },
 }
 </script>
@@ -22,7 +23,6 @@ export default {
 .dui {
   &-mask {
     background-color: rgba(0, 0, 0, 0);
-    position: fixed;
     z-index: 2000;
     bottom: 0;
     right: 0;
@@ -41,6 +41,9 @@ export default {
     -ms-flex-align: center;
     align-items: center;
   }
+  &-fixed {
+    position: fixed;
+  }
   &-toast {
     background: rgba(40, 40, 40, 0.85);
     text-align: center;
@@ -50,7 +53,7 @@ export default {
 
     &-content {
       font-size: 16px;
-      padding: 8px 12px;
+      padding: 4px 12px;
       word-break: break-all;
     }
   }

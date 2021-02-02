@@ -2,11 +2,11 @@
  * @Author: don
  * @Date: 2021-02-01 15:04:57
  * @LastEditors: don
- * @LastEditTime: 2021-02-01 15:05:31
+ * @LastEditTime: 2021-02-02 12:59:53
  * @Description: 
  */
 import Vue from 'vue'
-import toast from './index'
+import toast from './toast'
 
 const ToastConstructor = Vue.extend(toast)
 
@@ -21,6 +21,7 @@ ToastConstructor.prototype.closeToast = function () {
 }
 
 const Toast = (options = {}) => {
+  console.log(options)
   instance.mes = options.mes
   instance.icon = options.icon
   instance.timeout = ~~options.timeout || 2000
