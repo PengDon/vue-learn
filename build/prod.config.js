@@ -17,6 +17,14 @@ module.exports = {
   module: {
     rules: utils.rules
   },
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
+    alias: {
+      '@': utils.resolve('packages'),
+      '@com': utils.resolve('packages/components'),
+      'dui': utils.resolve('packages/index.js') // 便于app.js中进行开发调试
+    }
+  },
   plugins: [
     new VueLoaderPlugin(),
   ],
