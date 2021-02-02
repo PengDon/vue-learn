@@ -1,5 +1,5 @@
 <template>
-  <div class="dui-mask" :class="{'dui-fixed':isFixed}">
+  <div class="dui-mask" :class="{ 'dui-fixed': isFixed }">
     <div class="dui-toast">
       <div class="dui-toast-content">{{ mes }}</div>
     </div>
@@ -15,7 +15,10 @@ export default {
       default: 2000,
     },
     callback: Function,
-    isFixed: true,
+    isFixed: {
+      type: Boolean,
+      default: true,
+    },
   },
 }
 </script>
