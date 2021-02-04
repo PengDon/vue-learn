@@ -19,9 +19,9 @@ module.exports = {
     // 添加路径别名
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@': utils.resolve('../packages'),
-      '@com': utils.resolve('../packages/components'),
-      'dui': utils.resolve('../packages/index.js')
+      '@': path.resolve(__dirname,'../packages'),
+      '@com': path.resolve(__dirname,'../packages/components'),
+      'dui': path.resolve(__dirname,'../packages/index.js')
     }
     return config
   },

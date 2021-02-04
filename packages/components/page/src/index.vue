@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import CommHeader from "../components/header";
+import CommHeader from "@com/header";
 
 export default {
   name: "my-page",
